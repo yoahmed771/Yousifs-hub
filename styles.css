@@ -896,8 +896,9 @@ section[id] {
 }
 
 /* ===========================
-   RESPONSIVE
+   RESPONSIVE (FINAL)
 =========================== */
+
 
 @media (max-width: 980px) {
   .work {
@@ -909,7 +910,10 @@ section[id] {
   }
 }
 
+/* Mobile / tablet */
 @media (max-width: 860px) {
+
+  /* Fix header overlap + reduce top gap */
   :root {
     --header-h: 64px;
   }
@@ -918,6 +922,7 @@ section[id] {
     padding-top: clamp(18px, 3vw, 28px);
   }
 
+  /* Keep title wide (spread) but scale to fit */
   .hero-poster__title {
     display: flex;
     justify-content: space-between;
@@ -929,10 +934,13 @@ section[id] {
     max-width: 100%;
   }
 
-  .hero-poster__title > span {
+  /* keep wide feel if title is split into spans */
+  .hero-poster__title>span {
     font-size: 30px;
+
   }
 
+  /* One-column layout (center portrait + buttons) */
   .hero-poster__mid {
     grid-template-columns: 1fr;
     align-items: start;
@@ -940,6 +948,7 @@ section[id] {
     text-align: left;
   }
 
+  /* Services list stays left-aligned */
   .hero-poster__services {
     justify-self: start;
     text-align: left;
@@ -948,11 +957,13 @@ section[id] {
     margin-top: 10px;
   }
 
+  /* Buttons centered */
   .hero-poster__cta {
     justify-content: center;
     flex-wrap: wrap;
   }
 
+  /* Portrait centered + compensate for image padding */
   .hero-poster__portraitWrap {
     justify-self: center;
     max-width: 420px;
@@ -968,33 +979,10 @@ section[id] {
   }
 }
 
+/* Phones */
 @media (max-width: 680px) {
   :root {
     --header-h: 64px;
-  }
-
-  #projectModal {
-    padding: 10px 10px;
-  }
-
-  .modal__dialog {
-    width: calc(100vw - 20px);
-    max-height: 92svh;
-    margin: 10px auto;
-    overflow: auto;
-  }
-
-  .modal__header {
-    padding: 14px;
-    gap: 12px;
-  }
-
-  .modal__title {
-    font-size: 18px;
-  }
-
-  .modal__content {
-    padding: 14px;
   }
 
   .section__head {
@@ -1042,12 +1030,14 @@ section[id] {
   }
 }
 
+/* Tiny phones */
 @media (max-width: 420px) {
   .hero-poster__title {
     font-size: clamp(30px, 10vw, 64px);
   }
 }
 
+/* Motion preferences */
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;
@@ -1055,6 +1045,7 @@ section[id] {
   }
 }
 
+/* Overflow safety (kills right-side empty space) */
 html,
 body {
   overflow-x: hidden;
