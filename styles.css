@@ -1055,7 +1055,6 @@ section[id] {
   }
 }
 
-/* Overflow safety */
 html,
 body {
   overflow-x: hidden;
