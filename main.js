@@ -2,11 +2,11 @@
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
-// Year (safe)
+// Year 
 const yearEl = $("#year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Mobile nav (safe)
+// Mobile nav 
 const navToggle = $("#navToggle");
 const navList = $("#navList");
 
@@ -17,11 +17,11 @@ if (navToggle && navList) {
   });
 }
 
-// Close mobile nav when a nav link is used (don’t hijack normal link behavior)
+// Close mobile nav when a nav link is used 
 const navLinks = $$(".nav__link");
 navLinks.forEach(a => {
   a.addEventListener("click", (e) => {
-    // Ignore modified clicks (open in new tab, etc.)
+
     const modified = e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0;
     if (modified) return;
 
@@ -53,7 +53,7 @@ window.addEventListener("scroll", setActiveLink, { passive: true });
 window.addEventListener("hashchange", setActiveLink);
 setActiveLink();
 
-// Progress bar (safe)
+// Progress bar 
 const progress = $("#progress");
 let rafId = 0;
 window.addEventListener(
@@ -73,7 +73,7 @@ window.addEventListener(
   { passive: true }
 );
 
-// Reveal on scroll (safe)
+// Reveal on scroll 
 $$('.section, .card').forEach(el => el.classList.add('reveal'));
 
 if ("IntersectionObserver" in window) {
@@ -88,11 +88,10 @@ if ("IntersectionObserver" in window) {
 
   $$(".reveal").forEach(el => io.observe(el));
 } else {
-  // Fallback: just show everything
   $$(".reveal").forEach(el => el.classList.add("is-visible"));
 }
 
-// Hero title animation: split into characters (safe)
+// Hero title animation: split into characters 
 function splitIntoChars(el) {
   if (!el) return;
   if (el.dataset.split === "true") return;
@@ -343,7 +342,7 @@ function closeModal() {
   if (lastFocusEl && typeof lastFocusEl.focus === "function") lastFocusEl.focus();
 }
 
-// Open modal on card button + thumbnail (safe)
+// Open modal on card button + thumbnail 
 cards.forEach(card => {
   const btn = card.querySelector(".link-btn");
   const thumb = card.querySelector(".card__thumb");
@@ -364,6 +363,9 @@ cards.forEach(card => {
 if (modal) {
   modal.addEventListener("click", (e) => {
     const target = e.target;
+
+    if (target === modal) closeModal();
+
     if (target?.dataset?.close === "true") closeModal();
   });
 
@@ -394,3 +396,4 @@ if (modal) {
     }
   });
 }
+
