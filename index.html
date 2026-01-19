@@ -61,10 +61,6 @@
 
         <div class="hero-poster__mid">
           <div class="hero-poster__services">
-            <div>/ BRAND DESIGN</div>
-            <div>/ ILLUSTRATION &amp; POSTERS</div>
-            <div>/ SOCIAL MEDIA &amp; UI MOCKUPS</div>
-
             <div class="hero-poster__cta">
               <a class="btn" href="#work">View Work</a>
               <a class="btn btn--ghost" href="#contact">Contact</a>
@@ -75,8 +71,11 @@
             <img class="hero-poster__portraitImg" src="images/me.png" alt="Portrait of Yousif Ahmed"
               fetchpriority="high" decoding="async" />
           </div>
-
-          <div aria-hidden="true"></div>
+          <div class="hero-poster__services_list">
+            <div>/ BRAND DESIGN</div>
+            <div>/ ILLUSTRATION &amp; POSTERS</div>
+            <div>/ SOCIAL MEDIA &amp; UI MOCKUPS</div>
+          </div>
         </div>
       </div>
     </section>
@@ -383,7 +382,8 @@
   <div class="modal" id="projectModal" aria-hidden="true">
     <div class="modal__overlay" data-close="true" tabindex="-1" aria-hidden="true"></div>
 
-    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle"
+      aria-describedby="modalDesc">
       <div class="modal__header">
         <div>
           <p class="modal__kicker" id="modalKicker">Category</p>
@@ -395,7 +395,8 @@
       <div class="modal__content">
         <p class="muted" id="modalDesc"></p>
 
-        <a class="modal__pdfLink" id="modalPdf" href="#" target="_blank" rel="noopener" style="display:none;">View PDF</a>
+        <a class="modal__pdfLink" id="modalPdf" href="#" target="_blank" rel="noopener" style="display:none;">View
+          PDF</a>
 
         <div class="modal__meta" id="modalMeta"></div>
         <div class="modal__gallery" id="modalGallery"></div>
