@@ -172,29 +172,37 @@ section[id] {
   box-shadow: 0 0 0 6px rgba(37, 99, 235, .12);
 }
 
-.nav__toggle {
-  display: none;
+/* Hamburger button */
+.nav__toggle{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   
+  align-items: center;
+  gap: 6px;                
   width: 44px;
   height: 44px;
+  padding: 12px;           
   border: 1px solid var(--line);
   background: var(--surface);
   border-radius: 12px;
-  padding: 10px;
   cursor: pointer;
-  color: var(--heading);
+
+  -webkit-appearance: none; /* Safari consistency */
+  appearance: none;
+}
+
+/* The 3 lines */
+.nav__toggle span{
+  width: 100%;
+  height: 2px;
+  background: rgba(17, 24, 39, .75);
+  margin: 0;                /* IMPORTANT: remove margin */
+  display: block;
 }
 
 .nav__toggle:hover {
   border-color: rgba(17, 24, 39, .18);
   background: #F3F6FF;
-}
-
-.nav__toggle span {
-  display: block;
-  height: 2px;
-  width: 100%;
-  background: rgba(17, 24, 39, .75);
-  margin: 6px 0;
 }
 
 .nav__list {
