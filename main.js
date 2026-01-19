@@ -30,6 +30,20 @@ navLinks.forEach(a => {
   });
 });
 
+// Close mobile nav when clicking outside
+document.addEventListener("click", (e) => {
+  if (!navList.classList.contains("is-open")) return;
+
+  const clickedInsideNav = navList.contains(e.target);
+  const clickedToggle = navToggle.contains(e.target);
+
+  if (!clickedInsideNav && !clickedToggle) {
+    navList.classList.remove("is-open");
+    navToggle.setAttribute("aria-expanded", "false");
+  }
+});
+
+
 // Active section link
 const sections = ["hub", "about", "skills", "work", "contact"]
   .map(id => document.getElementById(id))
