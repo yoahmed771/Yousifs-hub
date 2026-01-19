@@ -244,10 +244,7 @@ const PROJECTS = {
       "images/website-ui/eminem-website4.png",
       "images/website-ui/eminem-website5.png",
       "images/website-ui/eminem-website6.png",
-      "images/website-ui/eminem-website7.png",
-      "images/website-ui/eminem-website8.png",
       "images/website-ui/eminem-website9.png",
-      "images/website-ui/eminem-website10.png"
     ],
     pdf: "pdf/eminem-interactive.pdf"
   },
