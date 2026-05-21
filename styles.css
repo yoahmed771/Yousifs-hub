@@ -166,7 +166,7 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 18px); }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-block: 14px;
+  padding: 16px clamp(40px, 5.5vw, 112px);
 }
 
 .logo__img { display: block; }
@@ -207,7 +207,7 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 18px); }
   justify-content: center;
   padding: 10px 18px;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 17px;
   color: rgba(17, 24, 39, .75);
   background: transparent;
   border: 0;
@@ -231,7 +231,7 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 18px); }
 
 .nav__link--cta {
   margin-left: 6px;
-  padding: 10px 16px;
+  padding: 12px 22px;
   border-radius: 999px;
   background: var(--heading);
   color: #fff !important;
@@ -302,10 +302,10 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 18px); }
   overflow: hidden;
 }
 .hero-poster__bg img {
-  width: 100%;
+  width: 112%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center 28%;
   display: block;
 }
 
