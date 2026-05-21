@@ -46,7 +46,6 @@
         </button>
 
         <ul class="nav__list" id="navList">
-          <li><a class="nav__link" href="#hub">Hub</a></li>
           <li><a class="nav__link" href="#about">About</a></li>
           <li><a class="nav__link" href="#skills">Skills</a></li>
           <li><a class="nav__link" href="#work">My Work</a></li>
@@ -57,16 +56,23 @@
   </header>
 
   <main>
-    <!-- HUB -->
+    <!-- HUB / HERO -->
     <section class="section hero hero--poster" id="hub">
       <div class="container hero-poster">
-        <div class="hero-poster__headline">
-          <h1 class="hero-poster__title" data-spread-title>CREATIVE DESIGNER</h1>
-          <div class="hero-poster__basedUnder">Yousif Ahmed</div>
+        <!-- Full-bleed background portrait -->
+        <div class="hero-poster__bg" aria-hidden="true">
+          <img src="images/WhatsApp Image 2026-05-14 at 11.32.33 AM.jpeg"
+            alt="" fetchpriority="high" decoding="async" />
         </div>
 
-        <div class="hero-poster__mid">
-          <div class="hero-poster__services">
+        <!-- Overlaid content -->
+        <div class="hero-poster__inner">
+          <div class="hero-poster__top">
+            <h1 class="hero-poster__title" data-spread-title>CREATIVE DESIGNER</h1>
+            <div class="hero-poster__basedUnder">Yousif Ahmed</div>
+          </div>
+
+          <div class="hero-poster__bottom">
             <div class="hero-poster__status">
               <span class="hero-poster__status-dot" aria-hidden="true"></span>
               Available for freelance &nbsp;·&nbsp; Based in Bahrain
@@ -76,19 +82,9 @@
               with a growing front-end practice on the side.
             </p>
             <div class="hero-poster__cta">
-              <a class="btn" href="#work">View Work</a>
-              <a class="btn btn--ghost" href="#contact">Contact</a>
+              <a class="btn btn--light" href="#work">View Work</a>
+              <a class="btn btn--ghost-light" href="#contact">Contact</a>
             </div>
-          </div>
-
-          <div class="hero-poster__portraitWrap" aria-label="Portrait">
-            <img class="hero-poster__portraitImg" src="images/WhatsApp Image 2026-05-14 at 11.32.33 AM.jpeg"
-              alt="Portrait of Yousif Ahmed" fetchpriority="high" decoding="async" />
-          </div>
-          <div class="hero-poster__services_list">
-            <div>BRAND DESIGN</div>
-            <div>ILLUSTRATION &amp; POSTERS</div>
-            <div>SOCIAL MEDIA &amp; UI MOCKUPS</div>
           </div>
         </div>
       </div>
