@@ -249,6 +249,14 @@ const PROJECTS = {
     pdf: "pdf/eminem-interactive.pdf"
   },
 
+  "ux-2": {
+    title: "UX Design",
+    category: "UX Design",
+    description: "UX design work focused on understanding users and translating research into clear, functional experiences — from wireframes and user flows to interactive prototypes and design handoff.",
+    meta: ["Tools: Figma", "Focus: Research, Wireframing, Prototyping"],
+    images: []
+  },
+
   "motion-1": {
     title: "Motion Graphics Video",
     category: "Motion Graphic",
