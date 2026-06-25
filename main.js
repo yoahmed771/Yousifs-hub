@@ -250,11 +250,12 @@ const PROJECTS = {
   },
 
   "motion-1": {
-    title: "Motion Graphics (Soon)",
+    title: "Motion Graphics Video",
     category: "Motion Graphic",
-    description: "Currently learning motion graphics — building skills in animation, timing, and visual storytelling.",
-    meta: ["Tool: After Effects (learning)"],
-    images: []
+    description: "I wrote the story, directed, and did most of the motion graphics in this video — bringing together narrative structure, visual timing, and animation to create a cohesive motion piece.",
+    meta: ["Role: Writer, Director, Motion Graphics", "Tool: After Effects"],
+    images: [],
+    video: "https://www.youtube.com/embed/v-nLDsTyYmc"
   }
 };
 
@@ -308,6 +309,19 @@ function openModal(projectId) {
     modalGallery.innerHTML = "";
     const imgs = Array.isArray(data.images) ? data.images : [];
 
+    if (data.video) {
+      const wrapper = document.createElement("div");
+      wrapper.className = "video-embed";
+      const iframe = document.createElement("iframe");
+      iframe.src = data.video;
+      iframe.title = data.title;
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      iframe.allowFullscreen = true;
+      iframe.loading = "lazy";
+      wrapper.appendChild(iframe);
+      modalGallery.appendChild(wrapper);
+    }
+
     if (imgs.length === 1) {
       const img = document.createElement("img");
       img.src = imgs[0];
@@ -330,7 +344,7 @@ function openModal(projectId) {
         div.appendChild(img);
         modalGallery.appendChild(div);
       });
-    } else {
+    } else if (!data.video) {
       const empty = document.createElement("div");
       empty.className = "gallery-empty muted";
       empty.textContent = "No images added yet.";
@@ -347,6 +361,9 @@ function openModal(projectId) {
 
 function closeModal() {
   if (!modal) return;
+  // Stop any embedded video by resetting the iframe src
+  const iframe = modal.querySelector(".video-embed iframe");
+  if (iframe) iframe.src = iframe.src;
   modal.classList.remove("is-open");
   modal.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
